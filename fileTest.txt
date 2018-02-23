@@ -1,0 +1,3 @@
+An algorithm is defined as a procedure that solves a
+determined problem, or a class of problems, through
+a finite number of elementary steps.

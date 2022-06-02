@@ -3,13 +3,13 @@
 
 typedef struct NODO
 {
-		char* word;
-		char* def;
-    int red;
-    struct NODO* parent;
-    struct NODO* rchild;
-    struct NODO* lchild;
-}NODO;
+  char *word;
+  char *def;
+  int red;
+  struct NODO *parent;
+  struct NODO *rchild;
+  struct NODO *lchild;
+} NODO;
 
 /*
 Input:
@@ -19,9 +19,7 @@ Output:
 Error handling: return in case of any type of NULL error. specify in the report
 errors that may occur
 */
-NODO* createFromFile(char* nameFile);
-
-
+NODO *createFromFile(char *nameFile);
 
 /*
 Input:
@@ -33,8 +31,7 @@ EXACTLY like this:
 "cup": [(null)]
 "tablecloth": [Piece of fabric or other material lying on the table to set the table]
 */
-void printDictionary(NODO*  dictionary);
-
+void printDictionary(NODO *dictionary);
 
 /*
 Input:
@@ -42,8 +39,7 @@ Input:
 Output:
 - the number of words saved in the dictionary
 */
-int countWord(NODO* dictionary);
-
+int countWord(NODO *dictionary);
 
 /*
 Input:
@@ -53,8 +49,7 @@ Output:
 -0 in case of absence of errors
 -1 in case of errors
 */
-int insertWord(NODO** dictionary, char* word);
-
+int insertWord(NODO **dictionary, char *word);
 
 /*
 Input:
@@ -64,9 +59,7 @@ Output:
 -0 in case of absence of errors
 -1 in case of errors
 */
-int cancWord(NODO** dictionary, char* word);
-
-
+int cancWord(NODO **dictionary, char *word);
 
 /*
 Input:
@@ -76,8 +69,7 @@ Output:
 - the word located in the dictionary at the i-th position in the order of saving
 -NULL in case of errors or word not present
 */
-char* getWordAt(NODO* dictionary, int index);
-
+char *getWordAt(NODO *dictionary, int index);
 
 /*
 Input:
@@ -90,8 +82,7 @@ Output:
 the function will not produce any effect
 in the event that a definition is already present, it must be totally overwritten
 */
-int insertDef(NODO* dictionary, char* word, char* def);
-
+int insertDef(NODO *dictionary, char *word, char *def);
 
 /*
 Input:
@@ -100,8 +91,7 @@ Input:
 Output:
 -la definizione nel caso essa sia presente, altrimenti NULL
 */
-char* searchDef(NODO* dictionary, char* word);
-
+char *searchDef(NODO *dictionary, char *word);
 
 /*
 Input:
@@ -111,8 +101,7 @@ Output:
 - (-1) in case of errors
 - 0 otherwise
 */
-int saveDictionary(NODO* dictionary, char* fileOutput);
-
+int saveDictionary(NODO *dictionary, char *fileOutput);
 
 /*
 Input:
@@ -120,8 +109,7 @@ Input:
 Output:
 - the dictionary read from the file
 */
-NODO* importDictionary(char *fileInput);
-
+NODO *importDictionary(char *fileInput);
 
 /*
 Input:
@@ -134,9 +122,7 @@ Output:
 -1 in case of presence of the term in the dictionary
 - (-1) in case of errors
 */
-int searchAdvance(NODO* dictionary, char* word, char** primoRis, char** secondoRis, char** terzoRis);
-
-
+int searchAdvance(NODO *dictionary, char *word, char **primoRis, char **secondoRis, char **terzoRis);
 
 /*
 Input:
@@ -146,8 +132,7 @@ Output:
 -0 in case it happened
 - (-1) in case of errors
 */
-int compressHuffman(NODO* dictionary, char* fileOutput);
-
+int compressHuffman(NODO *dictionary, char *fileOutput);
 
 /*
 Input:
@@ -157,4 +142,4 @@ Output:
 -0 in case it happened
 - (- 1) in case of errors
 */
-int decompressHuffman(char *fileInput, NODO** dictionary);
+int decompressHuffman(char *fileInput, NODO **dictionary);
